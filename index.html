@@ -53,9 +53,7 @@
       onLogin: editProfileScreen
         }
 
-                      function editProfileScreen (eventObj) {
-               nextScreen: "anton-editProfile-childB/update-screen"
-               }
+
     // Load Register Screen
     var paramsRegister = {
       screenSet: "anton_child-B",
@@ -63,6 +61,9 @@
       startScreen: "anton-register-screen",
       onLogin: editProfileScreen
         }
+        function editProfileScreen(eventObj) {
+                   gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childB', containerID: "my-reglog", startScreen: "update-screen"})
+                   }
 
         // Load Edit profile screen
     var paramsProfileUpdate = {
