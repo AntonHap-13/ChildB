@@ -12,7 +12,7 @@
 </head>
 <body>
     <main>
-    <!-- ***********************  ABOUT / PROFILE  *********************** -->
+
     <header>
       <nav>
         <div class="logo">
@@ -57,25 +57,18 @@
 
     // Load Login screen
     var paramsLogin = {
-      screenSet: "reglog_anton",
+      screenSet: "anton_child-B",
       containerID: "my-reglog",
       startScreen: "login-screen",
       onLogin: editProfileScreen
         }
 
-            // Load Lite Registration Screen
-        var paramsLiteRegistration = {
-          screenSet: "anton_LiteRegistration",
-          containerID: "my-reglog",
-          startScreen: "gigya-subscribe-with-email-screen"
-            }
-
-            function editProfileScreen (eventObj) {
+                      function editProfileScreen (eventObj) {
                nextScreen: "profileUpdate_anton/update-profile-screen"
                }
     // Load Register Screen
     var paramsRegister = {
-      screenSet: "reglog_anton",
+      screenSet: "anton_child-B",
       containerID: "my-reglog",
       startScreen: "anton-register-screen",
       onLogin: editProfileScreen
@@ -87,12 +80,7 @@
       containerID: "my-reglog",
       startScreen: "update-profile-screen"
         }
-        // Load Mobile Login screen
-        var paramsMobileLogin = {
-          screenSet: "reglog_anton",
-          containerID: "my-reglog",
-          startScreen: "anton-mobileLogin"
-            }
+      
 
 function SSOLogin () {
   gigya.sso.login(
