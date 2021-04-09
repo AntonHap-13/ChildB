@@ -23,7 +23,6 @@
         <div class="login-buttons">
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
-          <button class="glow-on-hover" id="login-btn" type="button" name="button"><a href="https://central-login-page.vercel.app/centralLogin.html" onclick="SSOLogin()">SSO Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
           <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
         </div>
@@ -48,41 +47,25 @@ gigya.socialize.addEventHandlers({
 
         function editProfileScreen(eventObj) {
                    gigya.accounts.showScreenSet({screenSet:'anton-editProfile-childB', containerID: "my-reglog", startScreen: "update-screen"})
-                   }        
-
+                   }
     // Load Login screen
     var paramsLogin = {
-      screenSet: "anton_child-B",
+      screenSet: "ChildB - RegLog",
       containerID: "my-reglog",
-      startScreen: "login-screen",
       onLogin: editProfileScreen
         }
-
-
     // Load Register Screen
     var paramsRegister = {
-      screenSet: "anton_child-B",
+      screenSet: "ChildB - RegLog",
       containerID: "my-reglog",
       startScreen: "anton-register-screen",
       onLogin: editProfileScreen
         }
-
-
         // Load Edit profile screen
     var paramsProfileUpdate = {
-      screenSet: "anton-editProfile-childB",
-      containerID: "my-reglog",
-      startScreen: "update-screen"
+      screenSet: "ChildB - profileUpdate",
+      containerID: "my-reglog"
         }
-
-
-function SSOLogin () {
-  gigya.sso.login(
-{
-  authFlow: 'redirect'
-
-});
-}
 </script>
 
 
