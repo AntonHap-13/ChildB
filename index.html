@@ -24,7 +24,7 @@
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
-          <button class="glow-on-hover" id="logout" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
+          <button class="glow-on-hover" id="logout" style="hidden" type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button>
         </div>
       </nav>
 
@@ -43,7 +43,7 @@
   </main>
 <script>
 gigya.socialize.addEventHandlers({
-        onLogin: editProfileScreen});
+        onLogin: editProfileScreen, function () { document.getElementById("logout").hidden=false; }});
 
         function editProfileScreen(eventObj) {
                    gigya.accounts.showScreenSet({screenSet:'ChildB - profileUpdate', containerID: "my-reglog"})
@@ -66,6 +66,27 @@ gigya.socialize.addEventHandlers({
       screenSet: "ChildB - profileUpdate",
       containerID: "my-reglog"
         }
+
+//logout functionality
+function logout () {
+gigya.accounts.logout({callback:function (response){
+   if (response.errorCode == 0) {
+      document.getElementById("logout").hidden=true; }
+       else { alert('Error:' + response.errorMessage);
+      }
+    }
+  });
+  }
+// if there's a user logged in then shows the logout link
+ gigya.accounts.getAccountInfo({callback:function (response) {
+    if (response.errorCode == 0) {
+       document.getElementById("logout").hidden=false; }
+      }
+    }
+  );
+   
+
+
 </script>
 
 
