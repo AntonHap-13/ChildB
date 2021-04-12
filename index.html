@@ -43,22 +43,23 @@
   </main>
 <script>
 gigya.socialize.addEventHandlers({
-        onLogin: function () { document.getElementById("logout").hidden=false; }
-      });
+        onLogin: function () { document.getElementById("logout").hidden=false; };
+        editProfileScreen ();
+      })
 
 
     // Load Login screen
     var paramsLogin = {
       screenSet: "ChildB - RegLog",
       containerID: "my-reglog",
-      onLogin: editProfileScreen
+      onLogin
         }
     // Load Register Screen
     var paramsRegister = {
       screenSet: "ChildB - RegLog",
       containerID: "my-reglog",
       startScreen: "anton-register-screen",
-      onLogin: editProfileScreen
+      onLogin: editProfileScree
         }
         // Load Edit profile screen
     var paramsProfileUpdate = {
