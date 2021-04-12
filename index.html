@@ -44,12 +44,9 @@
 <script>
 gigya.socialize.addEventHandlers({
         onLogin: function () { document.getElementById("logout").hidden=false; }
-        editProfileScreen
       });
 
-        function editProfileScreen(eventObj) {
-                   gigya.accounts.showScreenSet({screenSet:'ChildB - profileUpdate', containerID: "my-reglog"})
-                   }
+
     // Load Login screen
     var paramsLogin = {
       screenSet: "ChildB - RegLog",
@@ -68,6 +65,12 @@ gigya.socialize.addEventHandlers({
       screenSet: "ChildB - profileUpdate",
       containerID: "my-reglog"
         }
+
+
+        function editProfileScreen(eventObj) {
+                   gigya.accounts.showScreenSet({screenSet:'ChildB - profileUpdate', containerID: "my-reglog"})
+                   }
+
 
 //logout functionality
 function logout () {
