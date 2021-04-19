@@ -42,16 +42,16 @@
     </footer>
   </main>
 <script>
-// function editProfileScreen(eventObj) {
-//            gigya.accounts.showScreenSet({screenSet:'ChildB - profileUpdate', containerID: "my-reglog"}),
-//            document.getElementById("logout").hidden=false;
-//            }
-//
-// gigya.socialize.addEventHandlers({
-//         onLogin: editProfileScreen
-//       })
-//
-//
+function editProfileScreen(eventObj) {
+           gigya.accounts.showScreenSet({screenSet:'ChildB - profileUpdate', containerID: "my-reglog"}),
+           document.getElementById("logout").hidden=false;
+           }
+
+gigya.socialize.addEventHandlers({
+        onLogin: editProfileScreen
+      })
+
+
     // Load Login screen
     var paramsLogin = {
       screenSet: "ChildB - RegLog",
