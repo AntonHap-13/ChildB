@@ -52,7 +52,7 @@ customButtons = [{
     "iconURL": "http://developers.gigya.com/download/attachments/15795144/IDP.png",
     "logoURL": "",
     "lastLoginIconURL":"http://developers.gigya.com/download/attachments/15795144/Externalidp_LastLogin.png",
-    "position":"1"
+    "position":"4"
 
 }];
 
@@ -60,9 +60,9 @@ customButton_params =
 {
     "customButtons":customButtons,
     "showTermsLink":false, // 'terms' link is hidden
-    "containerID":"my-reglog" // The component will embed itself inside the "loginDiv" DIV (will not be a popup)
+    "screenSet":"ChildB - RegLog"
 }
-gigya.accounts.showScreenSet({screenSet: 'ChildB - RegLog', customButton_params});
+gigya.accounts.showScreenSet(customButton_params);
 }
 
 
