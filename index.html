@@ -24,7 +24,7 @@
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
-          <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="showRaasIdp();">IdP</a></button>
+          <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="loginToIdp();">IdP</a></button>
                     <span id="logout" hidden> <button class="glow-on-hover"  type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button></span>
         </div>
       </nav>
@@ -43,6 +43,24 @@
     </footer>
   </main>
 <script>
+function loginCallback(response) {  // The callback that handles the response object from the IdP
+        loginData = response;
+        returnedObject = JSON.stringify(loginData,undefined,4);
+        document.getElementById('JStext').innerHTML = returnedObject;
+        console.log(loginData);
+    }
+    gigya.socialize.addEventHandlers({  // Support for handling the response in RaaS
+       onLogin: loginCallback
+   })
+    function loginToIdp() {  // Logs into the IdP via the socialize.login method
+        var login_params =  ({
+           'provider': 'saml-auth0',
+           'callback': loginCallback
+        });
+        gigya.socialize.login(login_params);
+    }
+
+
         function showRaasIdp() {  // Implements the IdP within a RaaS Screen-Set
 customButtons = [{
     // The custom button object for the IdP within a RaaS Screen-Set
