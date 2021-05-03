@@ -22,7 +22,7 @@
 
         <div class="login-buttons">
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
-          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
+          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(customButton_params);">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
           <span id="logout" hidden> <button class="glow-on-hover"  type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button></span>
         </div>
@@ -61,7 +61,7 @@ customButton_params =
     "showTermsLink":false, // 'terms' link is hidden
     "containerID":"my-reglog" // The component will embed itself inside the "loginDiv" DIV (will not be a popup)
 }
-gigya.accounts.showScreenSet({screenSet: 'ChildB - RegLog', customButton_params});
+// gigya.accounts.showScreenSet({screenSet: 'ChildB - RegLog', customButton_params});
 }
 
 
