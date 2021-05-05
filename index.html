@@ -20,15 +20,27 @@ customButtons= [
         "logoURL": "",
         "lastLoginIconURL":"https://child-b.vercel.app/img/auth_logo_icon_169534.png",
         "position":"4"
+    },
+
+    {
+        "type": "saml",
+        "providerName":"auth0",
+        "idpName":"gggg",
+        "iconURL": "https://child-b.vercel.app/img/auth_logo_icon_169534.png",
+        "logoURL": "",
+        "lastLoginIconURL":"https://child-b.vercel.app/img/auth_logo_icon_169534.png",
+        "position":"1"
     }
+    
 ];
 var params =
 {
     "customButtons": customButtons, // Includes the customButtons array
     "showTermsLink":false, // 'terms' link is hidden
-    "containerID":"my-reglog", // The component will embed itself inside the "loginDiv" DIV (will not be a popup),
-    width:200
+      "containerID":"my-reglog", // The component will embed itself inside the "loginDiv" DIV (will not be a popup),
 }
+
+
 </script>
 </head>
 <body>
