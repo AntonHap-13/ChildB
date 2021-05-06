@@ -12,18 +12,18 @@
   <script type="text/javascript">
  // Adding testShib-gig02 as a SAML login provider using the 'params' object:
 customButtons= [
-    {
+    {// Custom Button object #1
         "type": "saml",
-        "providerName":"auth0",
-        "idpName":"saml-auth",
+        "providerName":"Auth0",
+        "idpName":"auth0",
         "iconURL": "https://child-b.vercel.app/img/auth_logo_icon_169534.png",
         "logoURL": "",
         "lastLoginIconURL":"https://child-b.vercel.app/img/auth_logo_icon_169534.png",
         "position":"4"
     },
-    {
+    {// Custom Button object #2
         "type": "saml",
-        "providerName":"auth0",
+        "providerName":"o",
         "idpName":"gggg",
         "iconURL": "https://child-b.vercel.app/img/auth_logo_icon_169534.png",
         "logoURL": "",
@@ -35,7 +35,7 @@ var params =
 {
     "customButtons": customButtons, // Includes the customButtons array
     "showTermsLink":false, // 'terms' link is hidden
-      "containerID":"my-reglog", // The component will embed itself inside the "loginDiv" DIV (will not be a popup),
+    "containerID":"my-reglog", // The component will embed itself inside the "loginDiv" DIV (will not be a popup),
 }
 
 
@@ -61,8 +61,8 @@ var params =
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
-          <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.socialize.showLoginUI(params);">IdP</a></button>
-                    <span id="logout" hidden> <button class="glow-on-hover"  type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button></span>
+          <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'ChildB - RegLog',customButtons});">IdP</a></button>
+          <span id="logout" hidden> <button class="glow-on-hover"  type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button></span>
         </div>
       </nav>
 
