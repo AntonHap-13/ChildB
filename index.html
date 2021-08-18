@@ -56,10 +56,10 @@ customButtons= [
 
         <div class="login-buttons">
           <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
-          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
+          <!-- <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'ChildB - RegLog', containerID: 'my-reglog', customButtons});">IdP</a></button>
-          <span id="logout" hidden> <button class="glow-on-hover"  type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button></span>
+          <span id="logout" hidden> <button class="glow-on-hover"  type="button" name="button"><a href="#" onclick="gigya.accounts.logout();">Logout</a></button></span> -->
         </div>
       </nav>
 
@@ -77,21 +77,21 @@ customButtons= [
     </footer>
   </main>
 <script>
-    function editProfileScreen(eventObj) {
-           gigya.accounts.showScreenSet({screenSet:'ChildB - profileUpdate', containerID: "my-reglog"}),
-           document.getElementById("logout").hidden=false;
-           }
-
-gigya.socialize.addEventHandlers({
-        onLogin: editProfileScreen
-      })
+//     function editProfileScreen(eventObj) {
+//            gigya.accounts.showScreenSet({screenSet:'ChildB - profileUpdate', containerID: "my-reglog"}),
+//            document.getElementById("logout").hidden=false;
+//            }
+//
+// gigya.socialize.addEventHandlers({
+//         onLogin: editProfileScreen
+//       })
 
 
     // Load Login screen
-    var paramsLogin = {
-      screenSet: "ChildB - RegLog",
-      containerID: "my-reglog"
-        }
+    // var paramsLogin = {
+    //   screenSet: "ChildB - RegLog",
+    //   containerID: "my-reglog"
+    //     }
     // Load Register Screen
     var paramsRegister = {
       screenSet: "2109-Promo-RegistrationLogin",
@@ -99,32 +99,32 @@ gigya.socialize.addEventHandlers({
       startScreen: "gigya-mobile-login-screen"
         }
         // Load Edit profile screen
-    var paramsProfileUpdate = {
-      screenSet: "ChildB - profileUpdate",
-      containerID: "my-reglog"
-        }
+    // var paramsProfileUpdate = {
+    //   screenSet: "ChildB - profileUpdate",
+    //   containerID: "my-reglog"
+    //     }
 
 
 
 
 
 //logout functionality
-function logout () {
-gigya.accounts.logout({callback:function (response){
-   if (response.errorCode == 0) {
-      document.getElementById("logout").hidden=true; }
-       else { alert('Error:' + response.errorMessage);
-      }
-    }
-  });
-  }
+// function logout () {
+// gigya.accounts.logout({callback:function (response){
+//    if (response.errorCode == 0) {
+//       document.getElementById("logout").hidden=true; }
+//        else { alert('Error:' + response.errorMessage);
+//       }
+//     }
+//   });
+//   }
 // if there's a user logged in then shows the logout link
- gigya.accounts.getAccountInfo({callback:function (response) {
-    if (response.errorCode == 0) {
-       document.getElementById("logout").hidden=false; }
-      }
-    }
-  );
+ // gigya.accounts.getAccountInfo({callback:function (response) {
+ //    if (response.errorCode == 0) {
+ //       document.getElementById("logout").hidden=false; }
+ //      }
+ //    }
+ //  );
 
 
 
