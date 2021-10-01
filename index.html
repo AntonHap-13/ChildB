@@ -55,7 +55,7 @@ customButtons= [
         </div>
 
         <div class="login-buttons">
-          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Register</a></button>
+          <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsRegister);">Login</a></button>
           <!-- <button class="glow-on-hover" id="signin-btn" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsLogin);">Login</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet(paramsProfileUpdate);">Edit Your Profile</a></button>
           <button class="glow-on-hover" id="edit" type="button" name="button"><a href="#" onclick="gigya.accounts.showScreenSet({screenSet:'ChildB - RegLog', containerID: 'my-reglog', customButtons});">IdP</a></button>
@@ -94,9 +94,9 @@ customButtons= [
     //     }
     // Load Register Screen
     var paramsRegister = {
-      screenSet: "1909-RegistrationLogin-Sandbox",
+      screenSet: "SecondScreen",
       containerID: "my-reglog",
-      startScreen: "gigya-login-screen"
+      startScreen: "gigya-passwordless-login"
         }
         // Load Edit profile screen
     // var paramsProfileUpdate = {
